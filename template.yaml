@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  WriteFile:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: write_txt/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Timeout: 60
+      Policies: AWSLambdaExecute
+
+#  Uncomment SrcBucket to create an S3 bucket as part of your deployment 
+#
+#  SrcBucket:
+#    Type: AWS::S3::Bucket
+#    Properties:
+#      BucketName: "my-unique-bucket-name"
